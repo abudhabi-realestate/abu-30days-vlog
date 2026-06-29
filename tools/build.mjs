@@ -16,7 +16,10 @@ const episodes = [
   { day: 4, file: '0625/Day4-阿布扎比的三张底牌.md', tag: 'EDGE', title: 'Day 4｜阿布扎比的「底牌」：主权基金、零税、外交政策' },
   { day: 5, file: '0626/Day5-人口多房为何还紧.md', tag: 'SUPPLY', title: 'Day 5｜人口比迪拜还多 20%——为什么房产反而更「紧」？' },
   { day: 6, file: '0627/Day6-阿布核心三岛总览.md', tag: 'ISLANDS', title: 'Day 6｜阿布核心三岛总览：72% 的成交发生在这里' },
+  { day: 7, file: '0627/Day7-Al Reem岛深聊.md', tag: 'REEM', title: 'Day 7｜Al Reem Island 深聊：配套动线、价位带与选盘逻辑' },
 ];
+
+const MAX_DAY = episodes.length;
 
 const CUT_SECTIONS = [
   '### 【发布备注】',
@@ -90,6 +93,7 @@ function sanitizeForReader(body) {
     if (/^\*\*下一步（Day/i.test(t)) continue;
     if (/Week 2 (先把|后半|进)/.test(t) && /Day [789]/.test(t)) continue;
     if (/欢迎私信聊聊/.test(t)) continue;
+    if (/评论区/.test(t)) continue;
     if (/我是迪拜 William/.test(t)) continue;
 
     out.push(line);
@@ -247,7 +251,7 @@ function mdToHtml(md) {
 
 function articleHtml(ep, meta, html) {
   const prev = ep.day > 1 ? `day-${ep.day - 1}.html` : null;
-  const next = ep.day < 6 ? `day-${ep.day + 1}.html` : null;
+  const next = ep.day < MAX_DAY ? `day-${ep.day + 1}.html` : null;
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
