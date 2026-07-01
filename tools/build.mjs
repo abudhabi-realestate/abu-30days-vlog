@@ -265,7 +265,7 @@ function articleHtml(ep, meta, html) {
 <body>
   <div class="site-brand-bar">
     <div class="site-brand-inner">
-      <a href="../index.html" class="site-name">WilliamXing · Vlog</a>
+      <a href="../index.html" class="site-name">WilliamXing · Blog</a>
       <span class="ep-badge">Day ${ep.day}/30</span>
     </div>
   </div>
