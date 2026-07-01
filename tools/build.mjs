@@ -97,7 +97,7 @@ function sanitizeForReader(body) {
     if (/Week 2 (先把|后半|进)/.test(t) && /Day [789]/.test(t)) continue;
     if (/欢迎私信聊聊/.test(t)) continue;
     if (/评论区/.test(t)) continue;
-    if (/我是迪拜 William/.test(t)) continue;
+    if (/我是阿联酋 William/.test(t)) continue;
 
     out.push(line);
   }
