@@ -2,7 +2,7 @@
 
 GitHub Pages 静态站。源稿在上一级 `source/` 目录。
 
-**在线访问：** https://SobhaZanYan.github.io/abu-30days-vlog/
+**在线访问：** https://abudhabi-realestate.github.io/abu-30days-vlog/
 
 ## 更新文章
 
