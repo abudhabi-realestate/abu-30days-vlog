@@ -51,8 +51,23 @@ body::before {
   text-decoration: none;
   letter-spacing: 0.04em;
 }
-.ep-badge {
+.lang-switch {
   margin-left: auto;
+  font-size: 0.78rem;
+}
+.lang-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.lang-link:hover {
+  color: var(--gold-bright);
+  border-color: rgba(201, 162, 39, 0.45);
+}
+.ep-badge {
   font-family: "SF Mono", Consolas, monospace;
   font-size: 0.68rem;
   color: var(--gold);
