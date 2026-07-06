@@ -53,20 +53,48 @@ body::before {
 }
 .lang-switch {
   margin-left: auto;
-  font-size: 0.78rem;
-}
-.lang-link {
-  color: var(--muted);
-  text-decoration: none;
-  padding: 0.2rem 0.55rem;
+  display: inline-flex;
+  align-items: stretch;
   border: 1px solid var(--border);
   border-radius: 4px;
-  transition: color 0.15s, border-color 0.15s;
+  overflow: hidden;
+  flex-shrink: 0;
 }
-.lang-link:hover {
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: "SF Mono", Consolas, monospace;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--border);
+}
+a.lang-btn,
+a.lang-btn:visited {
+  color: var(--muted);
+}
+a.lang-btn:hover {
+  color: var(--gold-light);
+  background: rgba(201, 162, 39, 0.06);
+}
+.lang-btn.active {
+  background: var(--gold-dim);
   color: var(--gold-bright);
-  border-color: rgba(201, 162, 39, 0.45);
+  cursor: default;
 }
+span.lang-btn { pointer-events: none; }
 .ep-badge {
   font-family: "SF Mono", Consolas, monospace;
   font-size: 0.68rem;

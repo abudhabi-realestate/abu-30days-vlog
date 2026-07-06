@@ -118,7 +118,6 @@ const LANG = {
     metaSuffix: '基于 ADREC 2025 公开数据',
     backLabel: '← 系列目录',
     footer: '交流咨询：<a href="../../">William Xing · 主页</a>',
-    langSwitch: '<a class="lang-link" href="en/day-{day}.html">English</a>',
     htmlLang: 'zh-CN',
     cssHref: '../styles.css',
     indexHref: '../index.html',
@@ -140,7 +139,6 @@ const LANG = {
     metaSuffix: 'Based on ADREC 2025 public data',
     backLabel: '← Series Index',
     footer: 'Contact: <a href="../../">William Xing · Home</a>',
-    langSwitch: '<a class="lang-link" href="../day-{day}.html">中文</a>',
     htmlLang: 'en',
     cssHref: '../../styles.css',
     indexHref: '../../en/index.html',
@@ -379,12 +377,19 @@ function mdToHtml(md) {
   return out.join('\n');
 }
 
+function langSwitchHtml(lang, day) {
+  if (lang === 'zh') {
+    return `<div class="lang-switch" role="group" aria-label="Language"><span class="lang-btn active" aria-current="page">中</span><a class="lang-btn" href="en/day-${day}.html">EN</a></div>`;
+  }
+  return `<div class="lang-switch" role="group" aria-label="Language"><a class="lang-btn" href="../day-${day}.html">中</a><span class="lang-btn active" aria-current="page">EN</span></div>`;
+}
+
 function articleHtml(ep, meta, html, lang) {
   const cfg = LANG[lang];
   const isEn = lang === 'en';
   const prev = ep.day > 1 ? `day-${ep.day - 1}.html` : null;
   const next = ep.day < MAX_DAY ? `day-${ep.day + 1}.html` : null;
-  const langSwitch = cfg.langSwitch.replace('{day}', ep.day);
+  const langSwitch = langSwitchHtml(lang, ep.day);
   const indexLink = isEn ? '../../en/index.html' : '../index.html';
 
   return `<!DOCTYPE html>
@@ -399,7 +404,7 @@ function articleHtml(ep, meta, html, lang) {
   <div class="site-brand-bar">
     <div class="site-brand-inner">
       <a href="${indexLink}" class="site-name">WilliamXing · Blog</a>
-      <span class="lang-switch">${langSwitch}</span>
+      ${langSwitch}
       <span class="ep-badge">Day ${ep.day}/30</span>
     </div>
   </div>
