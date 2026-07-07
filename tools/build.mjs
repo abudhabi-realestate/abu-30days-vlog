@@ -104,8 +104,8 @@ const episodes = [
     file: 'Day12-期房vs现房.md',
     fileEn: 'Day12-off-plan-vs-ready.md',
     tag: 'PLAN',
-    title: 'Day 12｜期房 vs 现房：71% 的人买期房，你该跟吗？',
-    titleEn: 'Day 12 | Off-Plan vs Ready: 71% Buy Off-Plan — Should You?',
+    title: 'Day 12｜期房 vs 现房：为什么配置型买家默认押期房？',
+    titleEn: 'Day 12 | Off-Plan vs Ready: Why Allocation Buyers Default to Off-Plan',
   },
 ];
 
