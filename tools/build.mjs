@@ -125,7 +125,6 @@ const LANG = {
     seriesName: '阿布房产30天',
     metaSuffix: '基于 ADREC 2025 公开数据',
     backLabel: '← 系列目录',
-    footer: '交流咨询：<a href="../../">William Xing · 主页</a>',
     htmlLang: 'zh-CN',
     cssHref: '../styles.css',
     indexHref: '../index.html',
@@ -137,6 +136,7 @@ const LANG = {
     cutSections: [
       '### [Publishing Notes]',
       '### [Closing CTA]',
+      '### [End CTA]',
       '### [Cover',
       '### [Script',
       '### [Internal Notes',
@@ -146,7 +146,6 @@ const LANG = {
     seriesName: 'Abu Dhabi Real Estate 30 Days',
     metaSuffix: 'Based on ADREC 2025 public data',
     backLabel: '← Series Index',
-    footer: 'Contact: <a href="../../">William Xing · Home</a>',
     htmlLang: 'en',
     cssHref: '../../styles.css',
     indexHref: '../../en/index.html',
@@ -228,8 +227,11 @@ function sanitizeForReader(body, lang) {
     if (/^\*\*下一步（Day/i.test(t) || /^\*\*Next \(Day/i.test(t)) continue;
     if (/Week 2 (先把|后半|进|first|second)/i.test(t) && /Day [789]/.test(t)) continue;
     if (/欢迎私信聊聊|DM me|欢迎私信/i.test(t)) continue;
+    if (/Feel free to DM|DM anytime/i.test(t)) continue;
+    if (/William, UAE|I'm William in the UAE|我是阿联酋 William/i.test(t)) continue;
+    if (/^### \[End CTA\]|^### \[Closing CTA\]/i.test(t)) continue;
+    if (/^### 【结尾引导】/.test(t)) continue;
     if (/评论区|comment section/i.test(t)) continue;
-    if (/我是阿联酋 William|I'm William/i.test(t)) continue;
 
     out.push(line);
   }
@@ -423,9 +425,6 @@ function articleHtml(ep, meta, html, lang) {
       <p class="meta">${cfg.seriesName} · Day ${ep.day} · ${cfg.metaSuffix}</p>
     </header>
     <div class="prose">${html}</div>
-    <footer class="article-foot">
-      <p>${cfg.footer}</p>
-    </footer>
     <nav class="ep-nav">
       ${prev ? `<a href="${prev}">← Day ${ep.day - 1}</a>` : '<span></span>'}
       ${next ? `<a href="${next}">Day ${ep.day + 1} →</a>` : '<span></span>'}
