@@ -99,6 +99,14 @@ const episodes = [
     title: 'Day 11｜阿布买房全流程（外国人版）：从选房到 Title Deed',
     titleEn: 'Day 11 | Abu Dhabi Buying Process (Foreign Buyers): Selection to Title Deed',
   },
+  {
+    day: 12,
+    file: 'Day12-阿布买房真实成本清单.md',
+    fileEn: 'Day12-true-cost-checklist.md',
+    tag: 'COST',
+    title: 'Day 12｜阿布买房真实成本清单：每个环节要掏多少钱',
+    titleEn: 'Day 12 | Abu Dhabi True Cost Checklist: What You Pay at Each Stage',
+  },
 ];
 
 const MAX_DAY = episodes.length;
