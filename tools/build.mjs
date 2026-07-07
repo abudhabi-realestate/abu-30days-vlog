@@ -101,11 +101,11 @@ const episodes = [
   },
   {
     day: 12,
-    file: 'Day12-阿布买房真实成本清单.md',
-    fileEn: 'Day12-true-cost-checklist.md',
-    tag: 'COST',
-    title: 'Day 12｜阿布买房真实成本清单：每个环节要掏多少钱',
-    titleEn: 'Day 12 | Abu Dhabi True Cost Checklist: What You Pay at Each Stage',
+    file: 'Day12-期房vs现房.md',
+    fileEn: 'Day12-off-plan-vs-ready.md',
+    tag: 'PLAN',
+    title: 'Day 12｜期房 vs 现房：71% 的人买期房，你该跟吗？',
+    titleEn: 'Day 12 | Off-Plan vs Ready: 71% Buy Off-Plan — Should You?',
   },
 ];
 
