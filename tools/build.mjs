@@ -107,14 +107,7 @@ const episodes = [
     title: 'Day 12｜期房 vs 现房：为什么配置型买家默认押期房？',
     titleEn: 'Day 12 | Off-Plan vs Ready: Why Allocation Buyers Default to Off-Plan',
   },
-  {
-    day: 13,
-    file: 'Day13-主要开发商怎么读.md',
-    fileEn: 'Day13-reading-developers.md',
-    tag: 'DEV',
-    title: 'Day 13｜主要开发商怎么读？Aldar / Sobha / Bloom 各是什么风格',
-    titleEn: 'Day 13 | How to Read Major Developers? Aldar / Sobha / Bloom',
-  },
+  // Day 13 withheld — re-add when content is finalized
 ];
 
 const MAX_DAY = episodes.length;
