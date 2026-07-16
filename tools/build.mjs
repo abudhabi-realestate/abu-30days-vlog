@@ -107,7 +107,14 @@ const episodes = [
     title: 'Day 12｜期房 vs 现房：为什么配置型买家默认押期房？',
     titleEn: 'Day 12 | Off-Plan vs Ready: Why Allocation Buyers Default to Off-Plan',
   },
-  // Day 13 withheld — re-add when content is finalized
+  {
+    day: 13,
+    file: 'Day13-别墅vs公寓.md',
+    fileEn: 'Day13-villa-vs-apartment.md',
+    tag: 'TYPE',
+    title: 'Day 13｜别墅 vs 公寓：阿布市场结构差异与选型逻辑',
+    titleEn: 'Day 13 | Villa vs Apartment: Market Structure & Selection Logic',
+  },
 ];
 
 const MAX_DAY = episodes.length;
