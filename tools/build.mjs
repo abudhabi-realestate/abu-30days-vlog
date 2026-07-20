@@ -115,6 +115,14 @@ const episodes = [
     title: 'Day 13｜别墅 vs 公寓：阿布市场结构差异与选型逻辑',
     titleEn: 'Day 13 | Villa vs Apartment: Market Structure & Selection Logic',
   },
+  {
+    day: 14,
+    file: 'Day14-阿布2030愿景.md',
+    fileEn: 'Day14-abu-2030-vision.md',
+    tag: 'VISION',
+    title: 'Day 14｜阿布扎比 2030 愿景：买房人该读的那张「城市路线图」',
+    titleEn: 'Day 14 | Abu Dhabi Economic Vision 2030: The City Roadmap Buyers Should Read',
+  },
 ];
 
 const MAX_DAY = episodes.length;
