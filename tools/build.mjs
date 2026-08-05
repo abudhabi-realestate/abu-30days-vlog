@@ -123,6 +123,14 @@ const episodes = [
     title: 'Day 14｜阿布扎比 2030 愿景：买房人该读的那张「城市路线图」',
     titleEn: 'Day 14 | Abu Dhabi Economic Vision 2030: The City Roadmap Buyers Should Read',
   },
+  {
+    day: 15,
+    file: 'Day15-别被岛字忽悠.md',
+    fileEn: 'Day15-dont-be-fooled-by-island.md',
+    tag: 'MICRO',
+    title: 'Day 15｜别被"岛"字忽悠：同岛价差 2.5 倍、交付期是隐形雷',
+    titleEn: 'Day 15 | Don\'t Be Fooled by "Island": Same-Island Prices Can Differ 2.5x, and Handover Timing Is a Hidden Risk',
+  },
 ];
 
 const MAX_DAY = episodes.length;
