@@ -418,6 +418,72 @@ function langSwitchHtml(lang, day) {
   return `<div class="lang-switch" role="group" aria-label="Language"><a class="lang-btn" href="../day-${day}.html">中</a><span class="lang-btn active" aria-current="page">EN</span></div>`;
 }
 
+function articleSchema(ep, meta, lang) {
+  const isEn = lang === 'en';
+  const url = isEn
+    ? `https://abudhabi-realestate.github.io/abu-30days-vlog/articles/en/day-${ep.day}.html`
+    : `https://abudhabi-realestate.github.io/abu-30days-vlog/articles/day-${ep.day}.html`;
+  const personId = 'https://abudhabi-realestate.github.io/william-xing-hub/#person';
+  const agentId = 'https://abudhabi-realestate.github.io/william-xing-hub/#agent';
+  const graph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': personId,
+        name: 'William Xing',
+        alternateName: ['邢文举', 'WilliamXing'],
+        url: 'https://abudhabi-realestate.github.io/william-xing-hub/',
+        jobTitle: 'Abu Dhabi & Dubai Real Estate Advisor',
+        telephone: '+971522240716',
+        identifier: [{ '@type': 'PropertyValue', name: 'WeChat', value: 'nothing9802' }],
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            contactType: 'sales',
+            name: 'WhatsApp',
+            telephone: '+971522240716',
+            url: 'https://wa.me/971522240716',
+            availableLanguage: ['zh-CN', 'en'],
+          },
+          {
+            '@type': 'ContactPoint',
+            contactType: 'WeChat',
+            name: '微信',
+            identifier: 'nothing9802',
+          },
+        ],
+      },
+      {
+        '@type': 'RealEstateAgent',
+        '@id': agentId,
+        name: 'William Xing · 邢文举',
+        url: 'https://abudhabi-realestate.github.io/william-xing-hub/',
+        telephone: '+971522240716',
+        employee: { '@id': personId },
+      },
+      {
+        '@type': 'Article',
+        '@id': `${url}#webpage`,
+        url,
+        headline: meta.title,
+        name: `${meta.title} · ${LANG[lang].seriesName}`,
+        description: meta.teaser || meta.title,
+        inLanguage: LANG[lang].htmlLang,
+        author: { '@id': personId },
+        creator: { '@id': personId },
+        publisher: { '@id': personId },
+        about: [{ '@id': personId }, { '@id': agentId }],
+      },
+    ],
+  };
+  return `<!-- william-schema:start -->
+<script type="application/ld+json">
+${JSON.stringify(graph, null, 2)}
+</script>
+<!-- william-schema:end -->`;
+}
+
 function articleHtml(ep, meta, html, lang) {
   const cfg = LANG[lang];
   const isEn = lang === 'en';
@@ -433,6 +499,7 @@ function articleHtml(ep, meta, html, lang) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${meta.title} · ${cfg.seriesName}</title>
   <link rel="stylesheet" href="${cfg.cssHref}" />
+  ${articleSchema(ep, meta, lang)}
 </head>
 <body>
   <div class="site-brand-bar">
